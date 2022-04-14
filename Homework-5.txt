@@ -1,0 +1,58 @@
+Console.WriteLine("\n------------------------------------------------");
+Console.WriteLine("Homework5");
+string name, gender, studentID, a, correction;
+
+int date;
+
+      Console.Write("\nplease enter your name:  ");
+      name = Console.ReadLine(); 
+      Console.Write("please enter your gender(male/female):   ");
+      gender = Console.ReadLine();
+      Console.Write("please enter your birthday(YYYYMMDD):    ");
+      date = Convert.ToInt32(Console.ReadLine()); 
+      Console.Write("please enter your studentID:     "); 
+      
+      studentID = Console.ReadLine();
+do
+{
+
+      Console.WriteLine("\n------------------------------------------------");
+      Console.WriteLine("Please double check your information below: ");
+      Console.WriteLine("\nYour name is " + name);
+      Console.WriteLine("Your gender is " + gender);
+      Console.WriteLine("Your birthday is on " + date);
+      Console.WriteLine("Your studentID is" + studentID);
+      Console.WriteLine("\n------------------------------------------------");
+      Console.Write("To continue please type1, rewrite type2 : ");
+     
+      a = Console.ReadLine();
+      if (a=="2")
+      {
+          Console.WriteLine("which information you want to rewrite?(name/gender/birthday/studentID):  ");
+          correction = Console.ReadLine();
+
+            switch(correction)
+            {
+                case "name":
+                  Console.Write("please rewrite your name:  ");
+                  name = Console.ReadLine();
+                  continue;
+                case "gender":
+                  Console.WriteLine("please rewrite your gender:  ");
+                  gender = Console.ReadLine();
+                  continue;
+                case "birthday":
+                  Console.Write("please rewrite your date (YYYYMMDD):  ");
+                  date = Convert.ToInt32(Console.ReadLine());
+                  continue; 
+                case "studentID":
+                  Console.Write("please rewrite your stuentID:  ");
+                  studentID = Console.ReadLine();
+                  continue;
+              default:
+                Console.Write("sorry we can't find your information");
+                break;
+            }
+      }
+}while(a == "2");
+Console.WriteLine("\nthank you, your information is now complete :) "); 
